@@ -5,7 +5,7 @@
            [checked]="item.completed"
            type="checkbox">
 
-    <label>{{ item.title | up:'!'}} {{ item.created | date }}</label>
+    <label appMarker>{{ item.title | up:'!'}} {{ item.created | date }}</label>
 
     <button class="destroy"></button>
 
