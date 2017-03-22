@@ -6,13 +6,11 @@ import {TodolistService} from "../todolist";
   templateUrl: './todolist-main.component.html',
   styleUrls: ['./todolist-main.component.less']
 })
-export class TodolistMainComponent implements OnInit {
+export class TodolistMainComponent {
 
-  constructor() {
-
+  public print(value){
+    console.log(value);
   }
 
-  ngOnInit() {
-  }
 
 }

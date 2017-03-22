@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ComponentRef, OnInit, ViewChild} from '@angular/core';
 import {TodolistService} from "./todolist";
-import {Logger} from "../shared/logger.service";
+import {TodolistMainComponent} from "./todolist-main/todolist-main.component";
 
 @Component({
   selector: 'app-todolist',
@@ -20,7 +20,9 @@ import {Logger} from "../shared/logger.service";
     </section>
   `,
 })
-export class TodolistComponent implements OnInit {
+export class TodolistComponent implements OnInit,AfterViewInit {
+
+  @ViewChild(TodolistMainComponent) mainComponent;
 
   public title: string;
   private list: TodolistService;
@@ -29,10 +31,10 @@ export class TodolistComponent implements OnInit {
     this.title = "TODOS";
     this.list  = list;
   }
-
-
-
-
+  ngAfterViewInit(): void {
+    console.log(this.mainComponent);
+    this.mainComponent.print('HEY');
+  }
 
   ngOnInit() {
   }
