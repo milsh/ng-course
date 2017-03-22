@@ -1,0 +1,10 @@
+
+<header class="header">
+
+  <h1>{{ headerTitle }}</h1>
+
+  <input class="new-todo"
+         (keydown.enter)="itemAdded.emit($event.target.value)"
+         placeholder="What needs to be done?"
+         autofocus>
+</header>
