@@ -1,6 +1,7 @@
 import {AfterContentInit, AfterViewInit, Component, ComponentRef, OnInit, ViewChild} from '@angular/core';
 import {TodolistService} from "./todolist";
 import {TodolistMainComponent} from "./todolist-main/todolist-main.component";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-todolist',
@@ -26,14 +27,18 @@ export class TodolistComponent implements OnInit,AfterViewInit {
 
   public title: string;
   private list: TodolistService;
+  private route: ActivatedRoute;
 
-  constructor(list: TodolistService) {
+  constructor(
+      list: TodolistService,
+      route:ActivatedRoute) {
+    this.route = route;
     this.title = "TODOS";
     this.list  = list;
   }
   ngAfterViewInit(): void {
-    console.log(this.mainComponent);
-    this.mainComponent.print('HEY');
+    this.route.params.subscribe( p => console.log(p))
+
   }
 
   ngOnInit() {

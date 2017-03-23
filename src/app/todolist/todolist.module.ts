@@ -9,7 +9,7 @@ import { TodolistItemComponent } from './todolist-item/todolist-item.component';
 import {TodolistService} from "./todolist";
 
 import {SharedModule} from "../shared/shared.module";
-import {UpPipe} from "../shared/up.pipe";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports     : [CommonModule, SharedModule],

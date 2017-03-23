@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 class NirValidators {
 
@@ -23,12 +24,7 @@ class NirValidators {
       <input type="text"
              formControlName="username"
              placeholder="username">
-      <pre>
-        {{ username.errors | json }}
-      </pre>
-      
       <input type="password"
-             *ngIf="username.valid"
              formControlName="password"
              placeholder="password">
       
@@ -42,8 +38,10 @@ class NirValidators {
 export class LoginComponent {
 
   public loginForm:FormGroup;
+  private router: Router;
 
-  constructor() {
+  constructor(router:Router) {
+    this.router    = router;
     this.loginForm = new FormGroup({
       username: new FormControl(null, [
         NirValidators.isNir,
@@ -58,7 +56,7 @@ export class LoginComponent {
   }
 
   public login(){
-    console.log(this.loginForm.value);
+    this.router.navigate(['list']);
   }
 
 }
