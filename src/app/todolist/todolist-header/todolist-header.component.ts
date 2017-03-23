@@ -7,10 +7,10 @@ import {Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChild
 })
 export class TodolistHeaderComponent  {
 
-  public flag:boolean = false;
+  public flag:boolean = true;
 
   constructor() {
-    setTimeout(() => this.flag = true, 5000)
+    // setTimeout(() => this.flag = true, 5000)
   }
 
   @ViewChild('head')

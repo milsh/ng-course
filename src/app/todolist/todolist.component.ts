@@ -37,7 +37,7 @@ export class TodolistComponent implements OnInit,AfterViewInit {
     this.list  = list;
   }
   ngAfterViewInit(): void {
-    this.route.params.subscribe( p => console.log(p))
+    this.route.queryParams.subscribe( p => console.log(p))
 
   }
 

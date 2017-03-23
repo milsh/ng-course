@@ -5,7 +5,7 @@ import {TodolistComponent} from "./todolist/todolist.component";
 export const routes:Routes = [
   {path: '',     component: LoginComponent},
   {
-    path     : 'list/:uid',
+    path     : 'list',
     component: TodolistComponent
   }
     // loadChildren: 'app/todolist/todolist.module.ts#TodolistModule'}
